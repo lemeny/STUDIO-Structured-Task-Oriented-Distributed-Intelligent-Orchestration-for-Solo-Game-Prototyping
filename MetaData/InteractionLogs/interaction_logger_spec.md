@@ -1,21 +1,18 @@
 # Interaction Logger Spec
 
-Version: 0.1.1
+Version: 0.2.1
 
 ## Scope
 Defines mandatory structure and process for logging STUDIO interactions.
 
 ## Required Log Path
 - Directory: `MetaData/InteractionLogs/`
-- Schema: `MetaData/InteractionLogs/logging_schema.json`
+- Schema: `MetaData/InteractionLogs/logging_schema.json` (v0.1.1 schema remains authoritative)
 - Log entries: JSON objects conforming to schema.
 
-## Mandatory Interaction Header
-Every future interaction request must include:
-1. Explicit `MODE` (`BUILD`, `META`, or `RUN`)
-2. Version reference (`workflow_version` in semver format)
-
-If either field is missing, interaction is invalid for logging-compliant workflow execution.
+## Zero-Prompt Logging Behavior
+Every interaction request in `BUILD`, `META`, or `RUN` mode is logged automatically by the logging daemon flow.
+Users do not provide log file names, paths, or sequence numbers.
 
 ## Automatic Log Entry Generation
 For every interaction:
@@ -26,6 +23,11 @@ For every interaction:
    - `MetaData/InteractionLogs/<log_index>_<timestamp>_<interaction_id>.json`
 5. Ensure `log_index` is the next available zero-padded 6-digit value (incremental, no duplicates).
 6. Validate generated entry against `logging_schema.json` before persistence.
+
+## Gap Detection and Backfill
+- Detect gaps via the integrity checker sequence validation.
+- Backfill any missing interaction records to restore contiguous `000001..N` ordering.
+- Resume normal incremental logging at `N+1`.
 
 ## Integrity Validation Script
 Run `python MetaData/InteractionLogs/check_integrity.py` to validate:
