@@ -1,5 +1,7 @@
-version: 0.1.1
+version: 0.2.1
 system: STUDIO
+mode: META
+project_status: logging_daemon_synchronized
 layout:
   workflow_root: Workflow
   metadata_root: MetaData
@@ -7,9 +9,12 @@ components:
   rules_dir: Workflow/Rules
   roles_dir: Workflow/Roles
   stages_dir: Workflow/Stages
-  build_logs_dir: MetaData/BuildLogs
-  run_logs_dir: MetaData/RunLogs
-  metrics_dir: MetaData/Metrics
-  model_info_dir: MetaData/ModelInfo
-reproducibility:
-  initialized: true
+state:
+  current_stage: Concept
+  pipeline_version: v1
+  state_policy: Workflow/Rules/state_policy.md
+logging:
+  schema_version: 0.1.1
+  policy_version: 0.2.1
+  protocol: zero_prompt_background_daemon
+  interaction_logs_dir: MetaData/InteractionLogs
