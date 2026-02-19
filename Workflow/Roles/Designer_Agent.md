@@ -16,3 +16,6 @@ Source_Task_ID: BUILD-0.3.0-ROLE-INIT
 
 ## Key Outputs
 - `Projects/Demo_Game/Design_Specs/*`
+
+## Persistent Instruction
+- Always refer to `Rules/gdd_standard_spec.md` as the mandatory output structure for GDD tasks.
