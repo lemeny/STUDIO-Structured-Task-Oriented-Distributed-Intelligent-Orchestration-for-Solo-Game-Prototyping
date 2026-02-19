@@ -5,6 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "log_index",
     "interaction_id",
     "mode",
     "timestamp",
@@ -26,7 +27,11 @@
     },
     "mode": {
       "type": "string",
-      "enum": ["BUILD", "META", "RUN"],
+      "enum": [
+        "BUILD",
+        "META",
+        "RUN"
+      ],
       "description": "Execution mode declared at interaction start."
     },
     "timestamp": {
@@ -69,6 +74,11 @@
     },
     "notes": {
       "type": "string"
+    },
+    "log_index": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonically increasing unique index for persisted interaction logs."
     }
   }
 }

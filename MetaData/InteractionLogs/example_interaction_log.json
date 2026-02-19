@@ -1,4 +1,5 @@
 {
+  "log_index": 1,
   "interaction_id": "build-2026-02-19T00:00:00Z-0001",
   "mode": "BUILD",
   "timestamp": "2026-02-19T00:00:05Z",
@@ -9,6 +10,6 @@
   "prompt_token_count": 180,
   "completion_token_count": 210,
   "latency_ms": 1420,
-  "workflow_version": "0.1.0",
+  "workflow_version": "0.1.1",
   "notes": "Initialization run entry; token and latency values are examples."
 }

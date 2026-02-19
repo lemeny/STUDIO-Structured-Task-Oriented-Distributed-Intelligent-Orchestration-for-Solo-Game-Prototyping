@@ -1,7 +1,7 @@
 # init_interaction_logging
 
 ```yaml
-version: 0.1.0
+version: 0.1.1
 mode: BUILD
 objective: initialize_structured_interaction_logging
 changes:
@@ -13,8 +13,10 @@ requirements_enforced:
   - explicit_mode_required: true
   - workflow_version_reference_required: true
   - automatic_log_entry_generation_required: true
+  - mandatory_logging_policy_required: true
 artifacts:
   schema: MetaData/InteractionLogs/logging_schema.json
   example: MetaData/InteractionLogs/example_interaction_log.json
   spec: MetaData/InteractionLogs/interaction_logger_spec.md
+  policy: MetaData/logging_policy.md
 ```

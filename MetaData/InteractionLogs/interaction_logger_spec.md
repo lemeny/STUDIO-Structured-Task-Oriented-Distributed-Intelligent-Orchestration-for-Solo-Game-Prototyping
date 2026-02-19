@@ -1,6 +1,6 @@
 # Interaction Logger Spec
 
-Version: 0.1.0
+Version: 0.1.1
 
 ## Scope
 Defines mandatory structure and process for logging STUDIO interactions.
@@ -21,12 +21,21 @@ If either field is missing, interaction is invalid for logging-compliant workflo
 For every interaction:
 1. Capture request and response payloads.
 2. Populate all required schema fields.
-3. Generate `interaction_id` unique within repository history.
+3. Allocate a unique, monotonically increasing `log_index` and generate `interaction_id` unique within repository history.
 4. Write one log file per interaction using naming convention:
-   - `MetaData/InteractionLogs/<timestamp>_<interaction_id>.json`
-5. Validate generated entry against `logging_schema.json` before persistence.
+   - `MetaData/InteractionLogs/<log_index>_<timestamp>_<interaction_id>.json`
+5. Ensure `log_index` is the next available zero-padded 6-digit value (incremental, no duplicates).
+6. Validate generated entry against `logging_schema.json` before persistence.
+
+## Integrity Validation Script
+Run `python MetaData/InteractionLogs/check_integrity.py` to validate:
+- required schema fields on log entries,
+- indexed filename format and uniqueness,
+- `log_index` to filename index consistency,
+- contiguous incremental index sequence.
 
 ## Field Definitions
+- `log_index`: Unique integer index for incremental log ordering.
 - `interaction_id`: Unique string identifier.
 - `mode`: One of `BUILD | META | RUN`.
 - `timestamp`: ISO 8601 UTC date-time.
