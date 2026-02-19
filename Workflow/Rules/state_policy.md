@@ -1,5 +1,9 @@
 # Workflow State Policy
 
+Creator_Role: System
+Status: FROZEN
+Source_Task_ID: BUILD-0.3.0-STATE-POLICY-ALIGN
+
 This policy defines valid state transitions for workflow artifacts.
 
 ## States
@@ -7,6 +11,10 @@ This policy defines valid state transitions for workflow artifacts.
 - **DRAFT**: Work is actively being authored or revised.
 - **FROZEN**: Work is approved for execution and should not change without formal reopening.
 - **DEPRECATED**: Work is retired and should not be used for new decisions.
+
+## Operational Tag
+
+- **FROZEN_PARTIAL**: A sub-component-level handover marker used for non-blocking parallel collaboration. It does not replace top-level artifact state.
 
 ## Allowed Transitions
 
