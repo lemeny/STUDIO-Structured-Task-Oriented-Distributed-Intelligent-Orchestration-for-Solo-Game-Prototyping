@@ -1,0 +1,15 @@
+version: 0.1.0
+system: STUDIO
+layout:
+  workflow_root: Workflow
+  metadata_root: MetaData
+components:
+  rules_dir: Workflow/Rules
+  roles_dir: Workflow/Roles
+  stages_dir: Workflow/Stages
+  build_logs_dir: MetaData/BuildLogs
+  run_logs_dir: MetaData/RunLogs
+  metrics_dir: MetaData/Metrics
+  model_info_dir: MetaData/ModelInfo
+reproducibility:
+  initialized: true
