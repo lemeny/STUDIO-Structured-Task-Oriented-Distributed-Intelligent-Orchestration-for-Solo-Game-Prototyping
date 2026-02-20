@@ -76,3 +76,8 @@ Every newly generated workflow artifact must include the following metadata head
 1. Prefer narrow, frozen interfaces early to unlock parallel work.
 2. Preserve backward references when frozen partials are superseded.
 3. Record handover events in task board notes to keep role synchronization auditable.
+
+## 6) Universal Design Quality Gate
+
+All design-stage tasks must use `Workflow/Rules/universal_gdd_spec.md` as the mandatory quality gate.
+No design-stage artifact may be marked as `FROZEN` unless it strictly adheres to `Workflow/Rules/universal_gdd_spec.md`.

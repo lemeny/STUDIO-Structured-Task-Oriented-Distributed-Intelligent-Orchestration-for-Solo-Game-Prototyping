@@ -1,6 +1,6 @@
 # Interaction Logger Spec
 
-Version: 0.2.1
+Version: 0.3.2
 
 ## Scope
 Defines mandatory structure and process for logging STUDIO interactions.
@@ -50,3 +50,10 @@ Run `python MetaData/InteractionLogs/check_integrity.py` to validate:
 - `latency_ms`: End-to-end response latency.
 - `workflow_version`: Workflow semver reference.
 - `notes`: Supplemental annotations.
+
+
+## Zero-Check Rule (Persistent Instinct)
+- Strict one-to-one mapping is mandatory: `1 user interaction = 1 atomic log entry`.
+- Logging executes as a standard background post-execution step for every interaction, without requiring explicit user reminders.
+- New entries must always detect the latest `log_index` in `MetaData/InteractionLogs/` and increment by exactly `+1`.
+- Fragmentation is disallowed for a single interaction; if fragmentation occurs, logs must be consolidated into one canonical entry.
