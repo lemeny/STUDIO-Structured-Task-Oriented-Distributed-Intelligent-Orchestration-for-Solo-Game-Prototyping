@@ -1,0 +1,15 @@
+{
+  "log_index": 5,
+  "interaction_id": "build-20260220T060832Z-000005",
+  "mode": "BUILD",
+  "timestamp": "2026-02-20T06:08:32Z",
+  "model_name": "GPT-5.2-Codex",
+  "model_version": "5.2",
+  "prompt_text": "RETROACTIVE LOG RECOVERY for missing v0.3.0 interaction entry.",
+  "response_text": "Recovered and persisted missing v0.3.0 log entry before further infrastructure updates.",
+  "prompt_token_count": 0,
+  "completion_token_count": 0,
+  "latency_ms": 0,
+  "workflow_version": "0.3.0",
+  "notes": "Retroactive backfill required by LOG_RECOVERY_FIRST for Version 0.3.0."
+}

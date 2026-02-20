@@ -18,4 +18,5 @@ Source_Task_ID: BUILD-0.3.0-ROLE-INIT
 - `Projects/Demo_Game/Design_Specs/*`
 
 ## Persistent Instruction
-- Always refer to `Rules/gdd_standard_spec.md` as the mandatory output structure for GDD tasks.
+- Always refer to `Workflow/Rules/universal_gdd_spec.md` as the mandatory output structure for all GDD and design-stage tasks.
+- Do not mark any design artifact as `FROZEN` unless it fully satisfies `Workflow/Rules/universal_gdd_spec.md`.
