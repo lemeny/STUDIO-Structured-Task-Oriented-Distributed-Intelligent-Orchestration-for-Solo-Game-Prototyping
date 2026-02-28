@@ -2,11 +2,11 @@
 
 Creator_Role: System
 Status: FROZEN
-Source_Task_ID: BUILD-0.3.0-TASKBOARD-SYNC
+Source_Task_ID: BUILD-0.4.0-TASKBOARD-SYNC
 
 ## Version
-- Previous: `v0.2.1`
-- Current: `v0.3.0`
+- Previous: `v0.3.0`
+- Current: `v0.4.0`
 
 ## Role-Linked Task Synchronization
 
