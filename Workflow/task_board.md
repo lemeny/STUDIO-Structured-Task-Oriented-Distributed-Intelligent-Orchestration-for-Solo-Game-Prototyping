@@ -16,6 +16,7 @@ Source_Task_ID: BUILD-0.3.0-TASKBOARD-SYNC
 | T-3002 | Architecture | Architect_Agent | `Projects/Demo_Game/Tech_Arch/` | DRAFT |
 | T-3003 | Implementation | Engineer_Agent | `Projects/Demo_Game/Implementation/` | DRAFT |
 | T-3004 | Testing | QA_Agent | `Projects/Demo_Game/QA_Results/` | DRAFT |
+| T-3101 | Design | Designer_Agent | `Projects/Savanna_Pulse/Design_Docs/` | IN_PROGRESS |
 
 ## Status Link Rules
 1. Each task must map to one role owner and one primary output directory.
@@ -23,9 +24,12 @@ Source_Task_ID: BUILD-0.3.0-TASKBOARD-SYNC
 3. Partial handovers use notes with `FROZEN_PARTIAL` tags before full task freeze.
 
 ## Handover Note Template
+- `Handoff_ID`:
 - `From`:
 - `To`:
 - `Artifact/Section`:
 - `Handover Tag`: `FROZEN_PARTIAL`
+- `Acceptance Contract`:
 - `Dependency Notes`:
+- `Open Risks`:
 - `Timestamp`:
