@@ -81,3 +81,12 @@ Every newly generated workflow artifact must include the following metadata head
 
 All design-stage tasks must use `Workflow/Rules/universal_gdd_spec.md` as the mandatory quality gate.
 No design-stage artifact may be marked as `FROZEN` unless it strictly adheres to `Workflow/Rules/universal_gdd_spec.md`.
+
+## 7) Structured Designer-to-Downstream Handoff
+
+All design-stage updates must follow `Workflow/Rules/designer_handoff_protocol.md` before downstream architecture/engineering/testing consumption.
+
+Minimum requirement:
+- include a valid Designer Handoff Packet for each bounded update intended for downstream roles,
+- reference packet details in the task board handover note.
+

@@ -24,9 +24,12 @@ Source_Task_ID: BUILD-0.3.0-TASKBOARD-SYNC
 3. Partial handovers use notes with `FROZEN_PARTIAL` tags before full task freeze.
 
 ## Handover Note Template
+- `Handoff_ID`:
 - `From`:
 - `To`:
 - `Artifact/Section`:
 - `Handover Tag`: `FROZEN_PARTIAL`
+- `Acceptance Contract`:
 - `Dependency Notes`:
+- `Open Risks`:
 - `Timestamp`:
