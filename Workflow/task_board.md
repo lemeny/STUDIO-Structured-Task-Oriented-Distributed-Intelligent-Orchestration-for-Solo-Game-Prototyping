@@ -2,11 +2,11 @@
 
 Creator_Role: System
 Status: FROZEN
-Source_Task_ID: BUILD-0.4.0-TASKBOARD-SYNC
+Source_Task_ID: BUILD-0.5.0-TASKBOARD-SYNC
 
 ## Version
-- Previous: `v0.3.0`
-- Current: `v0.4.0`
+- Previous: `v0.4.0`
+- Current: `v0.5.0`
 
 ## Role-Linked Task Synchronization
 
@@ -17,6 +17,7 @@ Source_Task_ID: BUILD-0.4.0-TASKBOARD-SYNC
 | T-3003 | Implementation | Engineer_Agent | `Projects/Demo_Game/Implementation/` | DRAFT |
 | T-3004 | Testing | QA_Agent | `Projects/Demo_Game/QA_Results/` | DRAFT |
 | T-3101 | Design | Designer_Agent | `Projects/Savanna_Pulse/Design_Docs/` | IN_PROGRESS |
+| T-5001 | Governance | System | `Workflow/Rules/` | FROZEN |
 
 ## Status Link Rules
 1. Each task must map to one role owner and one primary output directory.

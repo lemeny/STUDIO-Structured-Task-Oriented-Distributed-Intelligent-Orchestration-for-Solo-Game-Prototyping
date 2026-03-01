@@ -2,7 +2,7 @@
 
 Creator_Role: System
 Status: FROZEN
-Source_Task_ID: BUILD-0.3.0-GENERAL-WORKFLOW
+Source_Task_ID: BUILD-0.5.0-STAGE-GATE-GOVERNANCE
 
 ## Purpose
 
@@ -90,3 +90,23 @@ Minimum requirement:
 - include a valid Designer Handoff Packet for each bounded update intended for downstream roles,
 - reference packet details in the task board handover note.
 
+## 8) STAGE_GATE_PROTOCOL (Mandatory)
+
+All stage transitions must follow `Workflow/Rules/stage_gate_protocol.md`.
+
+### 8.1 Hard Gate Rule
+No downstream stage may begin unless the upstream stage gate status is explicitly **APPROVED**.
+
+Blocked transition examples:
+- Design -> Architecture without Design Gate approval.
+- Architecture -> Implementation without Architecture Gate approval.
+- Implementation -> Testing without Implementation Gate approval.
+
+### 8.2 Gate Evidence Requirement
+Every gate approval must provide:
+1. Gate owner identity.
+2. Approved artifact set (path + version or signature).
+3. Timestamped decision record.
+
+### 8.3 Enforcement
+If gate status is `PENDING` or `REJECTED`, downstream execution is invalid and must halt until an approved record is present.

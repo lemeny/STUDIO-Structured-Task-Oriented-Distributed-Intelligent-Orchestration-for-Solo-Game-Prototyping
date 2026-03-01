@@ -2,7 +2,7 @@
 
 Creator_Role: System
 Status: FROZEN
-Source_Task_ID: BUILD-0.4.0-DESIGNER-HANDOFF-PROTOCOL
+Source_Task_ID: BUILD-0.5.0-HANDOFF-GATE-PROTOCOL
 
 ## Purpose
 
@@ -81,3 +81,55 @@ A Designer update is considered handoff-ready only when:
 1. Handoff Packet exists with all required fields.
 2. Task board note exists and references the packet.
 3. Referenced section names/paths resolve to existing artifact content.
+
+
+## Architect-to-Developer Transition (Formal Gate Handoff)
+
+For Architecture -> Implementation, the handoff is valid only when all of the following are present:
+1. An Architect-originated handoff packet with bounded build scope.
+2. A valid `architect_gate_signature` from `Architect_Agent`.
+3. A task board handover note linking packet and gate signature.
+
+### Architect Handoff Packet (Required Fields)
+- `handoff_id`: Unique ID (format: `AH-<project>-<YYYYMMDD>-<nn>`)
+- `from_role`: Must be `Architect_Agent`
+- `to_role`: Must be `Engineer_Agent`
+- `source_artifact`: Relative architecture artifact path
+- `source_version`: Architecture artifact version string
+- `implementation_scope`: Bounded modules/interfaces approved for build
+- `architect_gate_id`: Must match `architect_gate_signature.gate_id`
+- `constraints_for_engineering`: Non-negotiable implementation constraints
+- `acceptance_contract`: Verifiable statements implementation must satisfy
+- `open_risks`: Known risks and unresolved integration concerns
+- `timestamp_utc`: ISO-8601 UTC timestamp
+
+### Architect-to-Developer Handoff Template
+
+```yaml
+handoff_id: AH-<project>-<YYYYMMDD>-<nn>
+from_role: Architect_Agent
+to_role: Engineer_Agent
+source_artifact: <relative/path/to/architecture/artifact>
+source_version: <x.y.z>
+implementation_scope:
+  - <module/interface 1>
+architect_gate_id: GATE-Architecture-<YYYYMMDD>-<nn>
+constraints_for_engineering:
+  - <constraint 1>
+acceptance_contract:
+  - <verifiable expectation 1>
+open_risks:
+  - <risk 1>
+timestamp_utc: <YYYY-MM-DDTHH:MM:SSZ>
+```
+
+## Downstream Start Rule (Hard Block)
+
+No downstream stage can begin unless its immediate upstream gate status is **APPROVED** and recorded.
+
+Specifically:
+- Architecture work must not begin until Design Gate is approved.
+- Implementation work must not begin until Architecture Gate is approved.
+- Testing work must not begin until Implementation Gate is approved.
+
+Any execution that starts without gate approval is non-compliant and must be halted and reopened through task board governance.

@@ -1,4 +1,4 @@
-version: 0.4.0
+version: 0.5.0
 system: STUDIO
 mode: BUILD
 project_status: async_multi_role_protocol_initialized
@@ -16,6 +16,7 @@ state:
   pipeline_version: v1
   state_policy: Workflow/Rules/state_policy.md
   master_protocol: Workflow/Rules/general_workflow_rules.md
+  stage_gate_protocol: Workflow/Rules/stage_gate_protocol.md
 logging:
   schema_version: 0.1.1
   policy_version: 0.2.1
