@@ -4,8 +4,8 @@
 
 ## Version
 
-- Previous: `v0.3.0`
-- Current: `v0.4.0`
+- Previous: `v0.4.0`
+- Current: `v0.5.0`
 - Bump Type: `minor`
 
 ## Repository Structure
@@ -58,5 +58,5 @@ STUDIO 使用三种交互模式来分离职责：
 ## Versioning Notes
 
 - 版本号遵循语义化版本（SemVer）。
-- 本次更新为 `minor` 级别：从 `0.3.0` 升级到 `0.4.0`。
-- 该版本用于同步 README 对当前 Workflow 结构与 MetaData 研究层定义的描述。
+- 本次更新为 `minor` 级别：从 `0.4.0` 升级到 `0.5.0`。
+- 该版本用于同步 Stage Gate 治理升级后的 Workflow 结构与 MetaData 研究层定义。
